@@ -3,27 +3,21 @@
  * @Autor: 小明～
  * @Date: 2022-04-26 09:08:16
  * @LastEditors: 小明～
- * @LastEditTime: 2022-04-26 09:45:19
+ * @LastEditTime: 2022-04-28 10:18:25
 -->
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import {ref} from 'vue'
+import { LAYOUT_TEMPLATE } from '@/constans/common'
+import { useStore } from 'vuex'
 console.warn(import.meta.env)
+// const store = useStore()
+// console.log(store.state.layoutTemplate,'store.state.layoutTemplate')
+// const layoutTemplate =LAYOUT_TEMPLATE[store.state.layoutTemplate] 
+// const layoutTemplate =LAYOUT_TEMPLATE[store.state.layoutTemplate] 
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <component :is="LAYOUT_TEMPLATE.default">
+  </component>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
